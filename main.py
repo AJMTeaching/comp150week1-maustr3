@@ -3,9 +3,63 @@
 # Lab 1
 # Problem 1
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
+# 1. Create a list called my_list with the values [1, 5, 'apple', 20.5].
+
+my_list = [1, 5, 'apple', 20.5]
+print(my_list)
+
+# 2. Using indexing, print the value 'apple' from my_list.
+
+if 'apple' in my_list:
+    print("'apple'")
+#better answer: print(my_list[2])
+
+# 3. Add the value 10 to the end of my_list using the append() method. Print the updated list.
+
+my_list.append(10)
+print(my_list)
+
+# 4. Remove the value 20.5 from my_list using the remove() method. Print the updated list.
+
+my_list.remove(20.5)
+print(my_list)
+
+# 5. Reverse the order of the elements in my_list using a method. Print the reversed list.
+
+my_list.reverse()
+print(my_list)
+#better answer: my_list_reversed = [::-1]
 
 # Problem 2
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
+# 1. Create a dictionary called person with keys 'name', 'age', 'job' and values 'John', 30, 'teacher'.
+
+my_dict =dict(name='John', age=30, job='teacher')
+print(my_dict)
+
+# 2. Print the value corresponding to the 'job' key.
+
+print(my_dict['job'])
+
+# 3. Add a new key-value pair: 'city': 'Paris' to the person dictionary. Print the updated dictionary.
+
+my_dict['city'] = 'Paris'
+print(my_dict)
+#alt answer: my_dict.update(city='Paris')
+#alt answer: my_dict |= {'city': 'Paris'}
+
+# 4. Remove the 'age' key-value pair from person. Print the updated dictionary.
+
+del my_dict['age']
+print(my_dict)
+#alt answer: my_dict.pop('age')
+
+# 5. Iterate through the person dictionary and print out each key-value pair on a separate line.
+
+for key, value in my_dict.items():
+    print(key, ":", value)
+#alt answer: for key in my_dict.keys():
+#print(f"Key: {key}, Value: {person[key]})
 
 # -----------------------------------------------------------------------------
 
@@ -34,8 +88,24 @@ def count_vowels(s: str) -> int:
     - int: The number of vowels in the string
     """
     # TODO: Implement this function
-    pass
-
+    # Step 1: What is it asking? 
+    # This question is asking me to write a function
+    # we're getting a parameter called 's' and we need to figure out how many vowels
+    # then we need to return the count at the ned
+    # Step 2: Pseudocode
+    # step 1: iterate over input string
+    # step 2: use for loop to check each letter 
+    # step 3: check to see if letter is vowel or not 
+    # step 4: if letter is vowel, then keep track of it 
+    # step 5: return the result of that process of keeping track  
+    
+    #vowels: list = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    vowels = "aeiouAEIOU"
+    vowel_count: int = 0
+    for letter in str:
+        if letter in vowels:
+            vowel_count += 1
+    return vowel_count      
 
 # Unit Tests for count_vowels
 def test_count_vowels():
@@ -64,7 +134,22 @@ def merge_lists(list1: list, list2: list) -> list:
     - list: A new sorted list containing all elements from list1 and list2
     """
     # TODO: Implement this function
-    pass
+    merge_lists = []
+    i = 0
+    j = 0
+
+    while i < len(list1) and j < len(list2):
+        if list1[i] < list2[j]:
+            merge_lists.append(list1[i])
+            i += 1
+        else:
+            merge_lists.append(list2[j])
+            j += 1
+    merge_lists.extend(list1[i:])
+    merge_lists.extend(list2[j:])
+
+    return merge_lists
+print(merge_lists)
 
 
 # Unit Tests for merge_lists
@@ -95,7 +180,10 @@ def word_lengths(words: list) -> list:
     - list: A list containing the lengths of the words
     """
     # TODO: Implement this function
-    pass
+    word_lengths = []
+    for word in words:
+        word_lengths.appen(len(word))
+    return word_lengths
 
 
 # Unit Tests for word_lengths
@@ -122,7 +210,8 @@ def reverse_string(s: str) -> str:
     - str: The reversed string
     """
     # TODO: Implement this function
-    pass
+    reverse_string.reverse()
+    print(reverse_string)
 
 
 # Unit Tests for reverse_string
@@ -151,7 +240,8 @@ def intersection(list1: list, list2: list) -> list:
     - list: The intersection of the two lists
     """
     # TODO: Implement this function
-    pass
+    set(list1).intersection(list2)
+    
 
 
 # Unit Tests for intersection
